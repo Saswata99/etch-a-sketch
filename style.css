@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: rgb(194, 200, 204);
+    background-color: #ececec;
+    width: 100%;
 }
 
 header{
@@ -24,22 +25,47 @@ section {
 .main {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    background-color: rgb(219, 224, 228);
-    width: 100vh;
-    border-radius: 6px;
+    gap: 15px;
+    padding: 25px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .draw-area {
-    padding: 10px;
+    height: 530px;
+    width: 530px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.block-row {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.block { 
+    flex: auto;
+    border: 1px solid #0000000a;
+    background-color: #ffffff;
+    user-select: none;
+}
+
+.block:hover {
+    background-color: #e2e2e2;
 }
 
 .side-panel {
     display: flex;
     flex-direction: column;
+    gap: 18px;
     align-items: center;
     flex: 0 0 150px;
-    padding: 20px;
+    padding: 40px 20px 0px;
 }
 
 #color-changer {
@@ -47,11 +73,21 @@ section {
     height: 90px;
     border: none;
     border-radius: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 #color-changer:hover {
     transform: scale(1.05);
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+  }
+  
+input[type=color]::-webkit-color-swatch-wrapper {
+      padding: 0;
 }
 
 
@@ -62,9 +98,8 @@ section {
     width: 130px;
     padding: 5px;
     font-size: 16px;
-    margin: 0px 0px 20px;
     border-radius: 7px;
-    border: .04em solid rgb(99, 97, 97);
+    border: .04em solid #636161;
 }
 
 #color:hover,
@@ -74,12 +109,33 @@ section {
     transform: scale(1.07);
 }
 
-#block-label {
-    align-self: flex-start;
-    margin: 10px 0px 5px 15px;
+#clear{
+    color: rgb(249, 73, 73);   
 }
+
+#clear:active{
+    border: 1px solid rgb(198, 59, 59);
+    box-shadow: 0px 0px 1px 1px red;
+}
+
+
+label {
+    align-self: flex-start;
+    font-size: 16px;
+    margin: 10px 0px -10px 10px ;
+}
+
+#block-slider {
+    accent-color: rgb(99, 97, 97);
+}
+
 
 .footer {
     text-align: center;
     padding-top: 25px;
+}
+
+.btn-selected {
+    background-color: #3d3d3d;
+    color: #efefef;
 }
